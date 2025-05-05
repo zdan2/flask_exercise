@@ -18,6 +18,9 @@ class Product(db.Model):
     name = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Float, nullable=False)
 
+@app.before_request
+def create_tables():
+    db.create_all()
 # --- ルーティング定義 ---
 
 @app.route('/')
