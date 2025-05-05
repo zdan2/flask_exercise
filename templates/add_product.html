@@ -1,0 +1,15 @@
+ {% extends 'base.html' %}
+ {% block content %}
+ <h2>商品追加</h2>
+ {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+ <form method="post">
+     <p>
+         <label>商品名: <input type="text" name="name" required></label>
+     </p>
+     <p>
+         <label>価格: <input type="number" step="0.01" name="price" required></label>
+     </p>
+     <p><button type="submit">追加</button></p>
+ </form>
+ <a href="{{ url_for('index') }}">一覧に戻る</a>
+ {% endblock %}
